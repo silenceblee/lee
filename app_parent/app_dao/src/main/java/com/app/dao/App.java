@@ -1,4 +1,4 @@
-package org.app.dao;
+package com.app.dao;
 
 /**
  * Hello world!
