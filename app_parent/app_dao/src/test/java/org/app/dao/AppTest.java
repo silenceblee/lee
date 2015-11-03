@@ -1,38 +1,37 @@
 package org.app.dao;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import javax.annotation.Resource;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+import org.apache.log4j.Logger;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+import com.alibaba.fastjson.JSON;
+import com.app.dao.ICountryDao;
+import com.app.po.Country;
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+@RunWith(SpringJUnit4ClassRunner.class)		//表示继承了SpringJUnit4ClassRunner类
+@ContextConfiguration(locations = {"classpath:spring_mybatis.xml"})
+
+public class AppTest {
+	private static Logger logger = Logger.getLogger(AppTest.class);
+//	private ApplicationContext ac = null;
+	@Resource
+	private ICountryDao countryMapper = null;
+
+//	@Before
+//	public void before() {
+//		ac = new ClassPathXmlApplicationContext("applicationContext.xml");
+//		userService = (IUserService) ac.getBean("userService");
+//	}
+
+	@Test
+	public void test1() {
+		Country user = countryMapper.selectByPrimaryKey("CHN");
+		// System.out.println(user.getUserName());
+		// logger.info("值："+user.getUserName());
+		logger.info(JSON.toJSONString(user));
+	}
 }
