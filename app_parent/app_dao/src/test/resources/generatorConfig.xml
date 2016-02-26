@@ -32,10 +32,10 @@
 	   		<property name="exampleMethodVisibility" value="public"/>
 	    </javaClientGenerator>
 	    
-	    <!-- 要生成那些表(更改tableName和domainObjectName就可以)
+	   <!--  要生成那些表(更改tableName和domainObjectName就可以)-->
 	    <table tableName="sys_dict_type" domainObjectName="SysDictType" schema="" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-	    </table> -->
-	    <table tableName="sys_dict_type" domainObjectName="SysDictType" schema="">
 	    </table>
+	    <!-- <table tableName="sys_dict_type" domainObjectName="SysDictType" schema="">
+	    </table> -->
   	</context>
 </generatorConfiguration>
