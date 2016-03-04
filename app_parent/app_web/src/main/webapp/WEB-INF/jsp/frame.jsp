@@ -1,25 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"   pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+%>    
 <!DOCTYPE html>
 <html lang="zh-CN">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>系统主页</title>
+		<title>Dashboard - Ace Admin</title>
 
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 		<!-- bootstrap & fontawesome -->
-		<link rel="stylesheet" href="<%=basePath%>bootstrap-3.3.5/dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="<%=basePath%>ace/assets/css/bootstrap.css" />
 		<link rel="stylesheet" href="<%=basePath%>ace/assets/css/font-awesome.css" />
 
 		<!-- page specific plugin styles -->
-
+		<link rel="stylesheet" href="<%=basePath%>ace/assets/css/jquery-ui.css" />
+		<link rel="stylesheet" href="<%=basePath%>ace/assets/css/datepicker.css" />
+		<link rel="stylesheet" href="<%=basePath%>ace/assets/css/ui.jqgrid.css" />
 		<!-- text fonts -->
 		<link rel="stylesheet" href="<%=basePath%>ace/assets/css/ace-fonts.css" />
 
@@ -37,6 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!-- inline styles related to this page -->
 
 		<!-- ace settings handler -->
+		<script src="<%=basePath%>ace/assets/js/ace-extra.js"></script>
 
 		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
@@ -68,10 +70,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<!-- /section:basics/sidebar.mobile.toggle -->
 				<div class="navbar-header pull-left">
 					<!-- #section:basics/navbar.layout.brand -->
-					<a href="#" class="navbar-brand">
+					<a  class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
-							零售超市管理系统
+							Ace Admin
 						</small>
 					</a>
 
@@ -100,7 +102,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<li class="dropdown-content">
 									<ul class="dropdown-menu dropdown-navbar">
 										<li>
-											<a href="#">
+											<a >
 												<div class="clearfix">
 													<span class="pull-left">Software Update</span>
 													<span class="pull-right">65%</span>
@@ -113,7 +115,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</li>
 
 										<li>
-											<a href="#">
+											<a >
 												<div class="clearfix">
 													<span class="pull-left">Hardware Upgrade</span>
 													<span class="pull-right">35%</span>
@@ -126,7 +128,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</li>
 
 										<li>
-											<a href="#">
+											<a >
 												<div class="clearfix">
 													<span class="pull-left">Unit Testing</span>
 													<span class="pull-right">15%</span>
@@ -139,7 +141,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</li>
 
 										<li>
-											<a href="#">
+											<a >
 												<div class="clearfix">
 													<span class="pull-left">Bug Fixes</span>
 													<span class="pull-right">90%</span>
@@ -154,7 +156,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</li>
 
 								<li class="dropdown-footer">
-									<a href="#">
+									<a >
 										See tasks with details
 										<i class="ace-icon fa fa-arrow-right"></i>
 									</a>
@@ -177,7 +179,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<li class="dropdown-content">
 									<ul class="dropdown-menu dropdown-navbar navbar-pink">
 										<li>
-											<a href="#">
+											<a >
 												<div class="clearfix">
 													<span class="pull-left">
 														<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
@@ -189,14 +191,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</li>
 
 										<li>
-											<a href="#">
+											<a >
 												<i class="btn btn-xs btn-primary fa fa-user"></i>
-												Bob just signed up as an editor <%=basePath%>ace.
+												Bob just signed up as an editor ...
 											</a>
 										</li>
 
 										<li>
-											<a href="#">
+											<a >
 												<div class="clearfix">
 													<span class="pull-left">
 														<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
@@ -208,7 +210,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</li>
 
 										<li>
-											<a href="#">
+											<a >
 												<div class="clearfix">
 													<span class="pull-left">
 														<i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
@@ -222,7 +224,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</li>
 
 								<li class="dropdown-footer">
-									<a href="#">
+									<a >
 										See all notifications
 										<i class="ace-icon fa fa-arrow-right"></i>
 									</a>
@@ -245,12 +247,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<li class="dropdown-content">
 									<ul class="dropdown-menu dropdown-navbar">
 										<li>
-											<a href="#" class="clearfix">
+											<a  class="clearfix">
 												<img src="<%=basePath%>ace/assets/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Alex:</span>
-														Ciao sociis natoque penatibus et auctor <%=basePath%>ace.
+														Ciao sociis natoque penatibus et auctor ...
 													</span>
 
 													<span class="msg-time">
@@ -262,12 +264,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</li>
 
 										<li>
-											<a href="#" class="clearfix">
+											<a  class="clearfix">
 												<img src="<%=basePath%>ace/assets/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Susan:</span>
-														Vestibulum id ligula porta felis euismod <%=basePath%>ace.
+														Vestibulum id ligula porta felis euismod ...
 													</span>
 
 													<span class="msg-time">
@@ -279,12 +281,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</li>
 
 										<li>
-											<a href="#" class="clearfix">
+											<a  class="clearfix">
 												<img src="<%=basePath%>ace/assets/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Bob:</span>
-														Nullam quis risus eget urna mollis ornare <%=basePath%>ace.
+														Nullam quis risus eget urna mollis ornare ...
 													</span>
 
 													<span class="msg-time">
@@ -296,12 +298,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</li>
 
 										<li>
-											<a href="#" class="clearfix">
+											<a  class="clearfix">
 												<img src="<%=basePath%>ace/assets/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Kate:</span>
-														Ciao sociis natoque eget urna mollis ornare <%=basePath%>ace.
+														Ciao sociis natoque eget urna mollis ornare ...
 													</span>
 
 													<span class="msg-time">
@@ -313,12 +315,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</li>
 
 										<li>
-											<a href="#" class="clearfix">
+											<a  class="clearfix">
 												<img src="<%=basePath%>ace/assets/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
 												<span class="msg-body">
 													<span class="msg-title">
 														<span class="blue">Fred:</span>
-														Vestibulum id penatibus et auctor  <%=basePath%>ace.
+														Vestibulum id penatibus et auctor  ...
 													</span>
 
 													<span class="msg-time">
@@ -332,7 +334,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</li>
 
 								<li class="dropdown-footer">
-									<a href="inbox.html">
+									<a url="inbox.html">
 										See all messages
 										<i class="ace-icon fa fa-arrow-right"></i>
 									</a>
@@ -354,14 +356,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 								<li>
-									<a href="#">
+									<a >
 										<i class="ace-icon fa fa-cog"></i>
 										Settings
 									</a>
 								</li>
 
 								<li>
-									<a href="profile.html">
+									<a url="profile.html">
 										<i class="ace-icon fa fa-user"></i>
 										Profile
 									</a>
@@ -370,7 +372,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<li class="divider"></li>
 
 								<li>
-									<a href="#">
+									<a >
 										<i class="ace-icon fa fa-power-off"></i>
 										Logout
 									</a>
@@ -433,16 +435,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 				<ul class="nav nav-list">
 					<li class="active">
-						<a url="http://www.baidu.com">
+						<a url="index.html">
 							<i class="menu-icon fa fa-tachometer"></i>
-							<span class="menu-text"> 主页 </span>
+							<span class="menu-text">主页</span>
 						</a>
 
 						<b class="arrow"></b>
 					</li>
 
 					<li class="">
-						<a href="#" class="dropdown-toggle">
+						<a  class="dropdown-toggle">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text">
 								系统设置
@@ -455,26 +457,65 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 						<ul class="submenu">
 							<li class="">
-								<a href="#" class="dropdown-toggle">
+								<a  class="dropdown-toggle">
 									<i class="menu-icon fa fa-caret-right"></i>
-									 系统监控
+
+									Layouts
 									<b class="arrow fa fa-angle-down"></b>
 								</a>
 
 								<b class="arrow"></b>
 
 								<ul class="submenu">
-									<li class="menu-icon fa fa-caret-right">
-										<a url="<%=basePath %>ace/html/top-menu.html">
-											硬盘监控
+									<li class="">
+										<a url="top-menu.html">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Top Menu
 										</a>
 
 										<b class="arrow"></b>
 									</li>
 
-									<li class="menu-icon fa fa-caret-right">
-										<a url="<%=basePath %>ace/html/two-menu-1.html">
-											CPU监控
+									<li class="">
+										<a url="two-menu-1.html">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Two Menus 1
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a url="two-menu-2.html">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Two Menus 2
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a url="mobile-menu-1.html">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Default Mobile Menu
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a url="mobile-menu-2.html">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Mobile Menu 2
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a url="mobile-menu-3.html">
+											<i class="menu-icon fa fa-caret-right"></i>
+											Mobile Menu 3
 										</a>
 
 										<b class="arrow"></b>
@@ -483,33 +524,391 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</li>
 
 							<li class="">
-								<a url="<%=basePath %>error-404.html">
+								<a url="system/dict/dict">
 									<i class="menu-icon fa fa-caret-right"></i>
-									用户设置
+									数据字典
 								</a>
 
 								<b class="arrow"></b>
 							</li>
 
 							<li class="">
-								<a url="<%=basePath %>ace/html/elements.html">
+								<a url="elements.html">
 									<i class="menu-icon fa fa-caret-right"></i>
-									菜单配置
+									基本元素
 								</a>
 
 								<b class="arrow"></b>
 							</li>
 
 							<li class="">
-								<a url="<%=basePath %>ace/html/buttons.html">
+								<a url="buttons.html">
 									<i class="menu-icon fa fa-caret-right"></i>
-									角色配置
+									按钮图标
 								</a>
 
 								<b class="arrow"></b>
 							</li>
+
+							<li class="">
+								<a url="content-slider.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Content Sliders
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="treeview.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Treeview
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="jquery-ui.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									jQuery UI
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="nestable-list.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Nestable Lists
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a  class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+
+									Three Level Menu
+									<b class="arrow fa fa-angle-down"></b>
+								</a>
+
+								<b class="arrow"></b>
+
+								<ul class="submenu">
+									<li class="">
+										<a >
+											<i class="menu-icon fa fa-leaf green"></i>
+											Item #1
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+
+									<li class="">
+										<a  class="dropdown-toggle">
+											<i class="menu-icon fa fa-pencil orange"></i>
+
+											4th level
+											<b class="arrow fa fa-angle-down"></b>
+										</a>
+
+										<b class="arrow"></b>
+
+										<ul class="submenu">
+											<li class="">
+												<a >
+													<i class="menu-icon fa fa-plus purple"></i>
+													Add Product
+												</a>
+
+												<b class="arrow"></b>
+											</li>
+
+											<li class="">
+												<a >
+													<i class="menu-icon fa fa-eye pink"></i>
+													View Products
+												</a>
+
+												<b class="arrow"></b>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
 					</li>
- 				</ul><!-- /.nav-list -->
+
+					<li class="">
+						<a  class="dropdown-toggle">
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text"> Tables </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a url="tables.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Simple &amp; Dynamic
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="jqgrid.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									jqGrid plugin
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a  class="dropdown-toggle">
+							<i class="menu-icon fa fa-pencil-square-o"></i>
+							<span class="menu-text"> Forms </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a url="form-elements.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Form Elements
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="form-elements-2.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Form Elements 2
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="form-wizard.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Wizard &amp; Validation
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="wysiwyg.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Wysiwyg &amp; Markdown
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="dropzone.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Dropzone File Upload
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a url="widgets.html">
+							<i class="menu-icon fa fa-list-alt"></i>
+							<span class="menu-text"> Widgets </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a url="calendar.html">
+							<i class="menu-icon fa fa-calendar"></i>
+
+							<span class="menu-text">
+								Calendar
+
+								<!-- #section:basics/sidebar.layout.badge -->
+								<span class="badge badge-transparent tooltip-error" title="2 Important Events">
+									<i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+								</span>
+
+								<!-- /section:basics/sidebar.layout.badge -->
+							</span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a url="gallery.html">
+							<i class="menu-icon fa fa-picture-o"></i>
+							<span class="menu-text"> Gallery </span>
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li class="">
+						<a  class="dropdown-toggle">
+							<i class="menu-icon fa fa-tag"></i>
+							<span class="menu-text"> More Pages </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a url="profile.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									User Profile
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="inbox.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Inbox
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="pricing.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Pricing Tables
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="invoice.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Invoice
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="timeline.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Timeline
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="email.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Email Templates
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="login.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Login &amp; Register
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+					<li class="">
+						<a  class="dropdown-toggle">
+							<i class="menu-icon fa fa-file-o"></i>
+
+							<span class="menu-text">
+								Other Pages
+
+								<!-- #section:basics/sidebar.layout.badge -->
+								<span class="badge badge-primary">5</span>
+
+								<!-- /section:basics/sidebar.layout.badge -->
+							</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a url="faq.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									FAQ
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="error-404.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Error 404
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="error-500.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Error 500
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="grid.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Grid
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a url="blank.html">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Blank Page
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+				</ul><!-- /.nav-list -->
 
 				<!-- #section:basics/sidebar.layout.minimize -->
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
@@ -521,8 +920,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
 				</script>
 			</div>
-
-			<!-- /section:basics/sidebar -->
+<!-- /section:basics/sidebar -->
 			<div class="main-content">
 				<div class="main-content-inner">
 					<!-- #section:basics/content.breadcrumbs -->
@@ -534,7 +932,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="#">管理系统</a>
+								<a >管理系统</a>
 							</li>
 							<li class="active">主页</li>
 						</ul><!-- /.breadcrumb -->
@@ -660,15 +1058,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 						&nbsp; &nbsp;
 						<span class="action-buttons">
-							<a href="#">
+							<a >
 								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
 							</a>
 
-							<a href="#">
+							<a >
 								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
 							</a>
 
-							<a href="#">
+							<a >
 								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
 							</a>
 						</span>
@@ -678,50 +1076,109 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			</div>
 
+			<a  id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
 		</div><!-- /.main-container -->
 
 		<!-- basic scripts -->
 
-		<script src="<%=basePath%>js/jquery-1.11.1.js"></script>
+		<!--[if !IE]> -->
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='<%=basePath%>ace/assets/js/jquery.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='<%=basePath%>ace/assets/js/jquery1x.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='<%=basePath%>ace/assets/js/jquery.mobile.custom.js'>"+"<"+"/script>");
+		</script>
 		<script src="<%=basePath%>ace/assets/js/bootstrap.js"></script>
+		<!-- 表格 -->
+		<script src="<%=basePath%>ace/assets/js/date-time/bootstrap-datepicker.js"></script>
+		<script src="<%=basePath%>ace/assets/js/jqGrid/jquery.jqGrid.src.js"></script>
+		<script src="<%=basePath%>ace/assets/js/jqGrid/i18n/grid.locale-cn.js"></script>
+		<!-- 表单校验 -->
+		<script src="<%=basePath%>ace/assets/js/jquery.validate.js"></script>
+		<script src="<%=basePath%>frame/js/messages_zh.js"></script>
+		<!-- page specific plugin scripts -->
+
 		<!--[if lte IE 8]>
 		  <script src="<%=basePath%>ace/assets/js/excanvas.js"></script>
 		<![endif]-->
-
+	<%-- 	<script src="<%=basePath%>ace/assets/js/jquery-ui.custom.js"></script>
+		<script src="<%=basePath%>ace/assets/js/jquery.ui.touch-punch.js"></script>
+		<script src="<%=basePath%>ace/assets/js/jquery.easypiechart.js"></script>
+		<script src="<%=basePath%>ace/assets/js/jquery.sparkline.js"></script>
+		<script src="<%=basePath%>ace/assets/js/flot/jquery.flot.js"></script>
+		<script src="<%=basePath%>ace/assets/js/flot/jquery.flot.pie.js"></script>
+		<script src="<%=basePath%>ace/assets/js/flot/jquery.flot.resize.js"></script>
+ --%>
 		<!-- ace scripts -->
+		<script src="<%=basePath%>ace/assets/js/ace/elements.scroller.js"></script>
+		<script src="<%=basePath%>ace/assets/js/ace/elements.colorpicker.js"></script>
+		<script src="<%=basePath%>ace/assets/js/ace/elements.fileinput.js"></script>
+		<script src="<%=basePath%>ace/assets/js/ace/elements.typeahead.js"></script>
+		<script src="<%=basePath%>ace/assets/js/ace/elements.wysiwyg.js"></script>
+		<script src="<%=basePath%>ace/assets/js/ace/elements.spinner.js"></script>
+		<script src="<%=basePath%>ace/assets/js/ace/elements.treeview.js"></script>
+		<script src="<%=basePath%>ace/assets/js/ace/elements.wizard.js"></script>
+		<script src="<%=basePath%>ace/assets/js/ace/elements.aside.js"></script>
 		<script src="<%=basePath%>ace/assets/js/ace/ace.js"></script>
-		<!-- 菜单隐藏按钮操作 -->
+		<script src="<%=basePath%>ace/assets/js/ace/ace.ajax-content.js"></script>
+		<script src="<%=basePath%>ace/assets/js/ace/ace.touch-drag.js"></script>
 		<script src="<%=basePath%>ace/assets/js/ace/ace.sidebar.js"></script>
 		<script src="<%=basePath%>ace/assets/js/ace/ace.sidebar-scroll-1.js"></script>
-		<!-- 设置按钮操作 -->
+		<script src="<%=basePath%>ace/assets/js/ace/ace.submenu-hover.js"></script>
+		<script src="<%=basePath%>ace/assets/js/ace/ace.widget-box.js"></script>
 		<script src="<%=basePath%>ace/assets/js/ace/ace.settings.js"></script>
 		<script src="<%=basePath%>ace/assets/js/ace/ace.settings-rtl.js"></script>
 		<script src="<%=basePath%>ace/assets/js/ace/ace.settings-skin.js"></script>
-		
+		<script src="<%=basePath%>ace/assets/js/ace/ace.widget-on-reload.js"></script>
+		<script src="<%=basePath%>ace/assets/js/ace/ace.searchbox-autocomplete.js"></script>
+
+		<!-- the following scripts are used in demo only for onpage help and you don't need them -->
+		<link rel="stylesheet" href="<%=basePath%>ace/assets/css/ace.onpage-help.css" />
+		<link rel="stylesheet" href="<%=basePath%>ace/docs/assets/js/themes/sunburst.css" />
+
+		<script type="text/javascript"> ace.vars['base'] = '..'; </script>
+		<script src="<%=basePath%>ace/assets/js/ace/elements.onpage-help.js"></script>
+		<script src="<%=basePath%>ace/assets/js/ace/ace.onpage-help.js"></script>
+		<script src="<%=basePath%>ace/docs/assets/js/rainbow.js"></script>
+		<script src="<%=basePath%>ace/docs/assets/js/language/generic.js"></script>
+		<script src="<%=basePath%>ace/docs/assets/js/language/html.js"></script>
+		<script src="<%=basePath%>ace/docs/assets/js/language/css.js"></script>
+		<script src="<%=basePath%>ace/docs/assets/js/language/javascript.js"></script>
+		<script src="<%=basePath%>frame/js/common.js"></script>
 		<script type="text/javascript">
 		 $(function(){
 		    	$(".nav-list").find("a").each(function(i){
 		    		 $(this).bind("click",function(){
 		    			 var path = $(this).attr("url");
-		    			 if(path != null && path != undefined)
-		    			 $.ajax({
-		    				  type: 'GET',
-		    				  contentType: "application/x-www-form-urlencoded; charset=utf-8",
-		    				  url: path,
-		    				  dataType: "html",
-		    				  cache:false, 
-		    				  success: function(data){
-		    					$('#iframe').html(data);
-		    				  },
-		    				  beforeSend:function(){
-		    					$('#iframe').html('<div class="alert alert-info" role="alert">数据加载中 。。。</div>');
-		    				  },
-		    				  error:function(){
-		    					$('#iframe').html('<div class="alert alert-danger" role="alert">404页面没找到</div>');
-		    				  }
-		   				});
-		    			// $("#iframe").html();
-		    			// $("#iframe").html($(this).attr("url"));
+		    			 if(path != null && path != undefined){
+				    			 $.ajax({
+				    				  type: 'GET',
+				    				  contentType: "application/x-www-form-urlencoded; charset=utf-8",
+				    				  url: "menu.do",
+				    				  data:"path="+path,
+				    				  dataType: "html",
+				    				  cache:false, 
+				    				  success: function(data){
+				    					$('#iframe').html(data);
+				    				  },
+				    				  beforeSend:function(){
+				    					$('#iframe').html('<div class="alert alert-info" role="alert">数据加载中 。。。</div>');
+				    				  },
+				    				  error:function(){
+				    					$('#iframe').html('<div class="alert alert-danger" role="alert">404页面没找到</div>');
+				    				  }
+				   				});
+		    			 }
 		    		 });
 		    	 });
 		    	$(".active>a").click();

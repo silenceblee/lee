@@ -2,11 +2,9 @@ package com.system.dao;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
+import com.frame.common.Page;
 import com.system.po.SysDictType;
 
-@Repository
 public interface SysDictTypeMapper {
     /**
      * 通过主键删除数据 
@@ -54,5 +52,5 @@ public interface SysDictTypeMapper {
      * 查询所有记录
      * @return
      */
-    List<SysDictType> selectAll();
+    List<SysDictType> selectList(Page page);
 }

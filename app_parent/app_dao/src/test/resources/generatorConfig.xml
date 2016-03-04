@@ -4,7 +4,7 @@
 	<!-- 设置mysql驱动路径 可以不用设置-->
 	<classPathEntry location="E:/software/maven2.2.1/repository/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar" />
   	 
-  	<context id="mysql" defaultModelType="flat">
+  	<context id="mysql"  defaultModelType="flat">
   		<plugin type="org.generator.MySerializablePlugin" />  
 	    <!--去除注释  -->
 	    <commentGenerator type="org.generator.MyCommentGenerator">
@@ -27,13 +27,13 @@
 	   		<property name="enableSubPackages" value="true" />
 	    </sqlMapGenerator>
 	    <!-- 生成DAO的包名和位置(路径不存在时自动创建，默认true) -->
-	    <javaClientGenerator targetPackage="com.system.dao" targetProject="app_dao" type="XMLMAPPER">
+	    <javaClientGenerator targetPackage="com.system.dao" implementationPackage="com.system.dao.impl" targetProject="app_dao" type="XMLMAPPER">
 	   		<property name="enableSubPackages" value="true" />
 	   		<property name="exampleMethodVisibility" value="public"/>
 	    </javaClientGenerator>
 	    
 	   <!--  要生成那些表(更改tableName和domainObjectName就可以)-->
-	    <table tableName="sys_dict_type" domainObjectName="SysDictType" schema="" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+	    <table tableName="sys_dict_entry" domainObjectName="SysDictEntry" schema="" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
 	    </table>
 	    <!-- <table tableName="sys_dict_type" domainObjectName="SysDictType" schema="">
 	    </table> -->

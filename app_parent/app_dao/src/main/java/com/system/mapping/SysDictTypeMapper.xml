@@ -109,9 +109,17 @@
     where DICT_TYPE = #{dictType,jdbcType=VARCHAR}
   </update>
   
-    <select id="selectAll" resultMap="BaseResultMap" >
+  	<!-- 查询记录集合 -->
+    <select id="selectList" resultMap="BaseResultMap" parameterType="com.frame.common.Page">
     select 
     <include refid="Base_Column_List" />
     from sys_dict_type
+    where 1= 1
+     <if test="condition.dictType != null" >
+     	and DICT_TYPE = #{condition.dictType}
+     </if>
+     <if test="condition.dictDesc != null" >
+     	and DICT_DESC = #{condition.dictDesc}
+     </if>
   </select>
 </mapper>

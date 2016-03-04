@@ -3,7 +3,11 @@ package com.app.system.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
+/**
+ * 登录
+ * @author master
+ *
+ */
 @Controller
 @RequestMapping("/")
 public class LoginAction {
