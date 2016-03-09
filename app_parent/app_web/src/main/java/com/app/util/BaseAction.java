@@ -97,7 +97,7 @@ public class BaseAction {
 			PrintWriter out = response.getWriter();
 			response.setCharacterEncoding(DEFAULT_CHAR_SET);
 			response.setContentType("text/html");
-			response.setContentLength(responseStr.getBytes(DEFAULT_CHAR_SET).length);
+			//response.setContentLength(responseStr.getBytes(DEFAULT_CHAR_SET).length);
 			out.print(responseStr);
 			out.flush();
 			out.close();
