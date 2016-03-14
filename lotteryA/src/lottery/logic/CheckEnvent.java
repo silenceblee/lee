@@ -218,24 +218,30 @@ public class CheckEnvent {
 				opertion3(list3);
 				opertion6(list6);
 				opertionAll(list0, list3, list6);
+				//显示的数量
+				int num = 0;
 				//显示数字
 				if(Common.isNotEmptyList(list0)){
 					for (JLabel jLabel : list0) {
 						jLabel.setVisible(true);
+						num ++;
 					}
 				}
 				//显示数字
 				if(Common.isNotEmptyList(list3)){
 					for (JLabel jLabel : list3) {
 						jLabel.setVisible(true);
+						num ++;
 					}
 				}
 				//显示数字
 				if(Common.isNotEmptyList(list6)){
 					for (JLabel jLabel : list6) {
 						jLabel.setVisible(true);
+						num ++;
 					}
 				}
+				lottery3d.lbNum.setText("共："+num+" 注 ");
 			}
 		});
 	}
@@ -586,7 +592,7 @@ public class CheckEnvent {
 		//和尾012
 		Tools.sumWei012Condition(list0, lottery3d.sumWei012);
 		//尾0-9
-		//Tools.sumWei0_9Condition(list0, lottery3d.sumWei0_9);
+		Tools.sumWei0_9Condition(list0, lottery3d.sumWei0_9);
 		//单双
 //		Tools.oddevenCondition(list0, lottery3d.oddeven);
 		//号码单双过滤
@@ -930,7 +936,7 @@ public class CheckEnvent {
 		//和尾012
 		Tools.sumWei012Condition(list3, lottery3d.sumWei012);
 		//尾0-9
-		//Tools.sumWei0_9Condition(list3, lottery3d.sumWei0_9);
+		Tools.sumWei0_9Condition(list3, lottery3d.sumWei0_9);
 		//单双
 		//Tools.oddevenCondition(list3, lottery3d.oddeven);
 		//号码单双过滤
@@ -1474,7 +1480,7 @@ public class CheckEnvent {
 		//和尾012
 		Tools.sumWei012Condition(list6, lottery3d.sumWei012);
 		//尾0-9
-		//Tools.sumWei0_9Condition(list6, lottery3d.sumWei0_9);
+		Tools.sumWei0_9Condition(list6, lottery3d.sumWei0_9);
 		//单双
 		//Tools.oddevenCondition(list6, lottery3d.oddeven);
 		//号码单双过滤
@@ -1568,7 +1574,7 @@ public class CheckEnvent {
 				setCheckBoxNoSelected(lottery3d.sum012Chb);
 				setCheckBoxNoSelected(lottery3d.spanChb012);
 				setCheckBoxNoSelected(lottery3d.sumWei012);
-//				setCheckBoxNoSelected(lottery3d.sumWei0_9);
+				setCheckBoxNoSelected(lottery3d.sumWei0_9);
 //				setCheckBoxNoSelected(lottery3d.oddeven);
 				setCheckBoxNoSelected(lottery3d.numberOddEven);
 			//	setCheckBoxNoSelected(lottery3d.n0279);
@@ -1598,10 +1604,19 @@ public class CheckEnvent {
 //				setCheckBoxNoSelected(lottery3d.tt0bt0);
 				setCheckBoxNoSelected(lottery3d.kh);
 //				setCheckBoxNoSelected(lottery3d.uk1);
-				setCheckBoxNoSelected(lottery3d.hkw);
-				setCheckBoxNoSelected(lottery3d.hwh);
+//				setCheckBoxNoSelected(lottery3d.hkw);
+//				setCheckBoxNoSelected(lottery3d.hwh);
 				setCheckBoxNoSelected(lottery3d.startTB);
+				setCheckBoxNoSelected(lottery3d.tbNew);
+				setCheckBoxNoSelected(lottery3d.tbSub);
+				setCheckBoxNoSelected(lottery3d.tbAdd);
+				setCheckBoxNoSelected(lottery3d.ttbb);
+				setCheckBoxNoSelected(lottery3d.c123);
+				setCheckBoxNoSelected(lottery3d.equalOrNo);
+				setCheckBoxNoSelected(lottery3d.tbThree);
+				setCheckBoxNoSelected(lottery3d.ttbbSecond);
 				setAllVisible();
+				lottery3d.lbNum.setText(lottery3d.lbNumText);
 			}
 		});
 	}
@@ -1677,9 +1692,17 @@ public class CheckEnvent {
 //		Tools.xmlDataCondition(lottery3d.tt0bt0,"tt0bt0", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.kh,"kh", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.startTB,"startTB", list0,list3,list6);
-		Tools.xmlDataCondition(lottery3d.hkw,"hkw", list0,list3,list6);
-		Tools.xmlDataCondition(lottery3d.hwh,"hwh", list0,list3,list6);
+	//	Tools.xmlDataCondition(lottery3d.hkw,"hkw", list0,list3,list6);
+	//	Tools.xmlDataCondition(lottery3d.hwh,"hwh", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.tbAdd,"tb_add", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.tbSub,"tb_sub", list0,list3,list6);
+		Tools.tbNewCondition(lottery3d.tbNew, list0,list3,list6);
 //		Tools.xmlDataCondition(lottery3d.uk1,"uk1", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.ttbb,"ttbb", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.equalOrNo,"equalOrNo", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.c123,"c123", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.tbThree,"tbThree", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.ttbbSecond,"ttbbSecond", list0,list3,list6);
 		//TODO 所有方法调用 opertionALL
 	}
 }

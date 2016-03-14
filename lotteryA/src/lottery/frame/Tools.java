@@ -61,6 +61,10 @@ public class Tools {
 	}
 	
 	
+	public static Map<String, Map<String, Set<String>>> getXmlMap() {
+		return xmlMap;
+	}
+
 	/**
 	 * 取得JLabel和值<p>
 	 * @param label
@@ -2160,6 +2164,82 @@ public class Tools {
 				 all.addAll(dataMap.get(i+""));
 			 }
 		 }
+		 if(all.size() < 1){
+			 return;
+		 }
+		 for(List<JLabel> list : lists){
+			 for(int i = 0; i <list.size();){
+				 String txt = list.get(i).getText().trim();
+				 if(all.contains(txt)){
+					 i++;
+				 }else{
+					 list.remove(i);
+				 }
+			 }
+		 }
+	 }
+	 
+	 /**
+	  * 获取两个集合的交集
+	  * @param set1 集合1
+	  * @param set2 集合2
+	  * @return
+	  */
+	 private static Set<String> getIntersection(Set<String> set1, Set<String> set2){
+		 Set<String> set = new HashSet<String>();
+		 Iterator<String> it = set1.iterator();
+		 while (it.hasNext()) {
+			String num = it.next();
+			if(set2.contains(num)){
+				set.add(num);
+			}
+			
+		}
+		 return set;
+	 }
+	 
+	/**
+	 * tb过滤(新)<br>
+	 * T=(‹T+›交集‹T-›）并集（‹B+›交集‹B-›）<br>
+	 * B=(‹T+›交集‹B-›）并集（‹B+›交集‹T-›）<br>
+	 * @param condtionBoxs
+	 * @param lists
+	 */
+	 @SafeVarargs
+	public static void tbNewCondition(JCheckBox[] condtionBoxs,List<JLabel> ...lists){
+		 if(lists == null || lists.length < 1){
+			 return;
+		 }
+		 if(!condtionBoxs[0].isSelected() && ! condtionBoxs[1].isSelected()){
+			 return;
+		 }
+		 //每个条件要显示的数字
+		 Map<String, Set<String>> addMap = xmlMap.get("tb_add");
+		 if(addMap == null || addMap.isEmpty()){
+			 return;
+		 }
+		 Map<String, Set<String>> subMap = xmlMap.get("tb_sub");
+		 if(subMap == null || subMap.isEmpty()){
+			 return;
+		 }
+		 Set<String> tAdd = addMap.get("0");
+		 Set<String> bAdd = addMap.get("1");
+		 Set<String> tSub = subMap.get("0");
+		 Set<String> bSub = subMap.get("1");
+		 Set<String> all = new HashSet<String>();
+		  
+		 if(condtionBoxs[0].isSelected()){
+			 //T=(‹T+›交集‹T-›）并集（‹B+›交集‹B-›）
+			 all.addAll(getIntersection(tAdd,tSub));
+			 all.addAll(getIntersection(bAdd,bSub));
+		 }
+		 
+		 if(condtionBoxs[1].isSelected()){
+			 //B=(‹T+›交集‹B-›）并集（‹B+›交集‹T-›
+			 all.addAll(getIntersection(tAdd,bSub));
+			 all.addAll(getIntersection(bAdd,tSub));
+		 }
+		 
 		 if(all.size() < 1){
 			 return;
 		 }
