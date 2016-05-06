@@ -1607,14 +1607,17 @@ public class CheckEnvent {
 //				setCheckBoxNoSelected(lottery3d.hkw);
 //				setCheckBoxNoSelected(lottery3d.hwh);
 				setCheckBoxNoSelected(lottery3d.startTB);
-				setCheckBoxNoSelected(lottery3d.tbNew);
+				//setCheckBoxNoSelected(lottery3d.tbNew);
 				setCheckBoxNoSelected(lottery3d.tbSub);
-				setCheckBoxNoSelected(lottery3d.tbAdd);
-				setCheckBoxNoSelected(lottery3d.ttbb);
+				//setCheckBoxNoSelected(lottery3d.tbAdd);
+				//setCheckBoxNoSelected(lottery3d.ttbb);
 				setCheckBoxNoSelected(lottery3d.c123);
 				setCheckBoxNoSelected(lottery3d.equalOrNo);
 				setCheckBoxNoSelected(lottery3d.tbThree);
 				setCheckBoxNoSelected(lottery3d.ttbbSecond);
+				setCheckBoxNoSelected(lottery3d.differ);
+				setCheckBoxNoSelected(lottery3d.kw);
+				setCheckBoxNoSelected(lottery3d.jjf);
 				setAllVisible();
 				lottery3d.lbNum.setText(lottery3d.lbNumText);
 			}
@@ -1694,15 +1697,18 @@ public class CheckEnvent {
 		Tools.xmlDataCondition(lottery3d.startTB,"startTB", list0,list3,list6);
 	//	Tools.xmlDataCondition(lottery3d.hkw,"hkw", list0,list3,list6);
 	//	Tools.xmlDataCondition(lottery3d.hwh,"hwh", list0,list3,list6);
-		Tools.xmlDataCondition(lottery3d.tbAdd,"tb_add", list0,list3,list6);
+	//	Tools.xmlDataCondition(lottery3d.tbAdd,"tb_add", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.tbSub,"tb_sub", list0,list3,list6);
-		Tools.tbNewCondition(lottery3d.tbNew, list0,list3,list6);
+	//	Tools.tbNewCondition(lottery3d.tbNew, list0,list3,list6);
 //		Tools.xmlDataCondition(lottery3d.uk1,"uk1", list0,list3,list6);
-		Tools.xmlDataCondition(lottery3d.ttbb,"ttbb", list0,list3,list6);
+	//	Tools.xmlDataCondition(lottery3d.ttbb,"ttbb", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.equalOrNo,"equalOrNo", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.c123,"c123", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.tbThree,"tbThree", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.ttbbSecond,"ttbbSecond", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.differ,"differ", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.kw,"kw", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.jjf,"jjf", list0,list3,list6);
 		//TODO 所有方法调用 opertionALL
 	}
 }

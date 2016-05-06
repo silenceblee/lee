@@ -698,9 +698,9 @@ public class Tools {
 	 */
 	public static void num012Condition(List<JLabel> list,JCheckBox num012Chb[]){
 		if(list != null && list.size() > 0){
-			if(num012Chb.length == 4){
+			if(num012Chb.length == 3){
 				//00
-				if(num012Chb[0].isSelected() || num012Chb[1].isSelected() || num012Chb[2].isSelected() || num012Chb[3].isSelected()){
+				if(num012Chb[0].isSelected() || num012Chb[1].isSelected() || num012Chb[2].isSelected()){
 					StringBuffer num00 = new StringBuffer();
 						num00.append("000.333.666.999.001.002.003.356.");
 						num00.append("004.005.006.007.008.009.338.339.");
@@ -727,13 +727,12 @@ public class Tools {
 						num22.append("884.553.551.880.881.025.028.058.");
 						num22.append("289.589.125.158.259.278.578.128.");
 						num22.append("268.568.258.238.248.358.458.235.");
-						num22.append("257.245.256.883.550");
-					StringBuffer num012 = new StringBuffer();
-						num012.append("012.015.024.123.018.027.045.");
-						num012.append("126.135.234.048.057.129.138.156.");
-						num012.append("237.246.345.078.159.168.249.267.");
-						num012.append("348.357.456.189.279.378.459.468.");
-						num012.append("567.489.579.678.789");
+						num22.append("257.245.256.883.550.");
+						num22.append("012.015.024.123.018.027.045.");
+						num22.append("126.135.234.048.057.129.138.156.");
+						num22.append("237.246.345.078.159.168.249.267.");
+						num22.append("348.357.456.189.279.378.459.468.");
+						num22.append("567.489.579.678.789");
 					for(int i = 0; i < list.size();){
 						String text = list.get(i).getText().trim();
 						boolean isContain = false;
@@ -751,12 +750,6 @@ public class Tools {
 							if(num22.toString().contains(text)){
 								isContain = true;
 							}
-						}
-						if(num012Chb[3].isSelected() && !isContain){
-							if(num012.toString().contains(text)){
-								isContain = true;
-							}
-								
 						}
 						if(isContain){
 							i ++;
