@@ -1,6 +1,5 @@
 package lottery.frame;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -34,10 +33,8 @@ public class Tools {
 	private static Map<String,Map<String,Set<String>>> xmlMap = new HashMap<String, Map<String,Set<String>>>();
 	static{
 		try{
-			String path = Tools.class.getClassLoader().getResource("lottery/data/data.xml").toURI().getPath();
-			File file = new File(path);
 			SAXReader reader = new SAXReader();
-			Document doc = reader.read(file);
+			Document doc = reader.read(Tools.class.getResourceAsStream("/lottery/data/data.xml"));
 			Element root = doc.getRootElement();
 			for(Iterator<?> typeEle=root.elementIterator("type");typeEle.hasNext();){
 				Element type = (Element) typeEle.next();
