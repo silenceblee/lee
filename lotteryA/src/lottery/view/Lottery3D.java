@@ -195,17 +195,17 @@ public class Lottery3D extends WindowAdapter{
 //	/**T+ B+*/
 	//public JCheckBox[] tbAdd = new JCheckBox[2]; 
 //	/**T- B-*/
-	public JCheckBox[] tbSub = new JCheckBox[2]; 
+	//public JCheckBox[] tbSub = new JCheckBox[2]; 
 	//add 2016-02-21
-	/**TT-BB*/
+	///**TT-BB*/
 	//public JCheckBox[] ttbb = new JCheckBox[2];
-	/** 1 2 3*/
-	public JCheckBox[] c123 = new JCheckBox[3];
-	/** == != */
-	public JCheckBox[] equalOrNo = new JCheckBox[2];
+	///** 1 2 3*/
+	//public JCheckBox[] c123 = new JCheckBox[3];
+	///** == != */
+	//public JCheckBox[] equalOrNo = new JCheckBox[2];
 	//add 2016-02-27
-	/** T B*/
-	public JCheckBox[] tbThree = new JCheckBox[2];
+	///** T B*/
+	//public JCheckBox[] tbThree = new JCheckBox[2];
 	//add 2016-03-06
 	/**TTBB_Second*/
 	public JCheckBox[] ttbbSecond = new JCheckBox[2];
@@ -218,6 +218,19 @@ public class Lottery3D extends WindowAdapter{
 	//add 2016.5.6
 	/**+◆-*/
 	public JCheckBox[] jjf = new JCheckBox[3];
+	//add 2016.8.10
+	/**■ Η X*/
+	public JCheckBox[] fhx = new JCheckBox[3];
+	/**跨尾过滤(同跨尾 不同跨尾)*/
+	public JCheckBox[] kwDiff = new JCheckBox[2];
+	/**顺过滤*/
+	public JCheckBox[] sgl = new JCheckBox[2];
+	/**XXDD过滤*/
+	public JCheckBox[] xxdd = new JCheckBox[2];
+	/**77 11 22 99过滤*/
+	public JCheckBox[] setn = new JCheckBox[4];
+	/**0 3 6 9 2 4 5 7 8 过滤*/
+	public JCheckBox[] zsen = new JCheckBox[9];
 	//************************button控件***************************************
 	/** button 按钮 存放控件 **/
 	public Panel btnPanel = new Panel();
@@ -355,21 +368,15 @@ public class Lottery3D extends WindowAdapter{
 			spanChb012[i] = new JCheckBox(i+"");
 			setConditionValue(spanChb012[i],i+1);
 		}
-		//TODO T-B-（新）
-		for(int i = 0; i < tbSub.length; i++){
-			tbSub[i] = new JCheckBox();
-		}
-		tbSub[0].setText("T-");
-		setConditionValue(tbSub[0],sencodPosition+1);
-		tbSub[1].setText("B-");
-		setConditionValue(tbSub[1],sencodPosition+2);	
-		y++;
-		//TODO 和尾012
-		setConditionTitle("和尾012:", 0);
-		for(int i = 0; i < sumWei012.length; i++){
-			sumWei012[i] = new JCheckBox(i+"");
-			setConditionValue(sumWei012[i],i+1);
-		}
+//		//TODO T-B-（新）
+//		for(int i = 0; i < tbSub.length; i++){
+//			tbSub[i] = new JCheckBox();
+//		}
+//		tbSub[0].setText("T-");
+//		setConditionValue(tbSub[0],sencodPosition+1);
+//		tbSub[1].setText("B-");
+//		setConditionValue(tbSub[1],sencodPosition+2);	
+		
 		//TODO 跨度快捷键
 		setConditionTitle("跨:", sencodPosition);
 		spanChbShortcut[0] = new JCheckBox("中");
@@ -377,13 +384,19 @@ public class Lottery3D extends WindowAdapter{
 		spanChbShortcut[1] = new JCheckBox("边 ");
 		setConditionValue(spanChbShortcut[1],sencodPosition+2);	
 		y++;
-		
-		//TODO 和值012过滤
-		setConditionTitle("和值012:", 0);
-		for(int i = 0; i < sum012Chb.length; i++){
-			sum012Chb[i] = new JCheckBox(i+"");
-			setConditionValue(sum012Chb[i],i+1);
+		//TODO 和尾012
+		setConditionTitle("和尾012:", 0);
+		for(int i = 0; i < sumWei012.length; i++){
+			sumWei012[i] = new JCheckBox(i+"");
+			setConditionValue(sumWei012[i],i+1);
 		}
+		
+		zsen[0] = new JCheckBox("0");
+		zsen[0].setForeground(Color.BLUE);
+		setConditionValue(zsen[0], 4);
+		zsen[1] = new JCheckBox("2");
+		zsen[1].setForeground(Color.BLUE);
+		setConditionValue(zsen[1], 5);
 		//TODO 跨度快捷键
 		setConditionTitle("跨度:", sencodPosition);
 		kd[0] = new JCheckBox(13+"");
@@ -392,14 +405,22 @@ public class Lottery3D extends WindowAdapter{
 		kd[3] = new JCheckBox(68+"");
 		for(int i = 0; i < kd.length; i++){
 			setConditionValue(kd[i],sencodPosition+i+1);
-		}				
+		}
 		y++;
+
 		//TODO 号码012过滤
 		setConditionTitle("号码012:", 0);
 		for(int i = 0; i < num012Chb.length; i++){
 			num012Chb[i] = new JCheckBox(i+""+i+"");
 			setConditionValue(num012Chb[i],i+1);
 		}
+		zsen[2] = new JCheckBox("3");
+		zsen[2].setForeground(Color.BLUE);
+		setConditionValue(zsen[2], 4);
+		zsen[3] = new JCheckBox("4");
+		zsen[3].setForeground(Color.BLUE);
+		setConditionValue(zsen[3], 5);
+		
 		//TODO 号码单双过滤
 		setConditionTitle("号码单双:", sencodPosition);
 		String text = "";
@@ -412,11 +433,25 @@ public class Lottery3D extends WindowAdapter{
 			setConditionValue(numberOddEven[i],i+1+sencodPosition);
 		}
 		y++;
-		//TODO 1 2 3
+/*		//TODO 1 2 3
 		for(int i = 0; i < c123.length; i++){
 			c123[i] = new JCheckBox(i+1+"");
 			setConditionValue(c123[i], i+1);
+		}*/
+		//TODO ■ Η X
+		
+		fhx[0] = new JCheckBox("■");
+		fhx[1] = new JCheckBox("H");
+		fhx[2] = new JCheckBox("X");
+		for(int i = 0; i < fhx.length; i++){
+			setConditionValue(fhx[i],i+1);
 		}
+		zsen[4] = new JCheckBox("6");
+		zsen[4].setForeground(Color.BLUE);
+		setConditionValue(zsen[4], 4);
+		zsen[5] = new JCheckBox("5");
+		zsen[5].setForeground(Color.BLUE);
+		setConditionValue(zsen[5], 5);
 		//TODO 和尾快捷键
 		setConditionTitle("和尾:", sencodPosition);
 		hw[0] = new JCheckBox(13+"");
@@ -427,6 +462,29 @@ public class Lottery3D extends WindowAdapter{
 			setConditionValue(hw[i],i+1+sencodPosition);
 		}	
 		y++;
+		
+		//TODO+◆-
+		jjf[0] = new JCheckBox("+");
+		jjf[1] = new JCheckBox("◆");
+		jjf[2] = new JCheckBox("-");
+		setConditionValue(jjf[0], 1);
+		setConditionValue(jjf[1], 2);
+		setConditionValue(jjf[2], 3);
+		
+		zsen[6] = new JCheckBox("9");
+		zsen[6].setForeground(Color.BLUE);
+		setConditionValue(zsen[6], 4);
+		zsen[7] = new JCheckBox("7");
+		zsen[7].setForeground(Color.BLUE);
+		setConditionValue(zsen[7], 5);
+		
+		//TODO TTBB_Second
+		ttbbSecond[0] = new JCheckBox("TT");
+		setConditionValue(ttbbSecond[0], sencodPosition + 1);
+		ttbbSecond[1] = new JCheckBox("BB");
+		setConditionValue(ttbbSecond[1], sencodPosition + 2);
+		y++;
+		
 		//TODO 和值快捷键
 		setConditionTitle("和:", 0);
 		sumChbShortcut[0] = new JCheckBox("边");
@@ -435,24 +493,22 @@ public class Lottery3D extends WindowAdapter{
 		setConditionValue(sumChbShortcut[1],2);
 		sumChbShortcut[2] = new JCheckBox("边");
 		setConditionValue(sumChbShortcut[2],3);
-
+		
+		zsen[8] = new JCheckBox("8");
+		zsen[8].setForeground(Color.BLUE);
+		setConditionValue(zsen[8], 5);
+		
+		//TODO 同不同
+		differ[0] = new JCheckBox("同");
+		setConditionValue(differ[0], 7);
+		differ[1] = new JCheckBox("不");
+		setConditionValue(differ[1], 8);
+		
 	/*	//TODO TT BB
 		ttbb[0] = new JCheckBox("TT");
 		setConditionValue(ttbb[0], 1);
 		ttbb[1] = new JCheckBox("BB");
 		setConditionValue(ttbb[1], 2);*/
-		
-		//TODO OZ过滤
-		oz[0] = new JCheckBox("O");
-		oz[1] = new JCheckBox("Z");
-		setConditionValue(oz[0], 4);
-		setConditionValue(oz[1], 5);
-		
-		//TODO c015
-		c015[0] = new JCheckBox("0");
-		c015[1] = new JCheckBox("15");
-		setConditionValue(c015[0], 7);
-		setConditionValue(c015[1], 8);
 		
 		y++;
 		/*//TODO TB（新）
@@ -463,18 +519,19 @@ public class Lottery3D extends WindowAdapter{
 		setConditionValue(tbNew[0],1);
 		tbNew[1].setText("B");
 		setConditionValue(tbNew[1],2);*/
-
+		
+		//TODO 和值012过滤
+		setConditionTitle("和值012:", 0);
+		for(int i = 0; i < sum012Chb.length; i++){
+			sum012Chb[i] = new JCheckBox(i+"");
+			setConditionValue(sum012Chb[i],i+1);
+		}
 		//TODO *T*B
 		startTB[0] = new JCheckBox("*T");
-		setConditionValue(startTB[0], 4);
+		setConditionValue(startTB[0], 7);
 		startTB[1] = new JCheckBox("*B");
-		setConditionValue(startTB[1], 5);
+		setConditionValue(startTB[1], 8);
 		
-		//TODO TTBB_Second
-		ttbbSecond[0] = new JCheckBox("TT");
-		setConditionValue(ttbbSecond[0], 7);
-		ttbbSecond[1] = new JCheckBox("BB");
-		setConditionValue(ttbbSecond[1], 8);
 		y++;
 		/*//TODO T+B+（新）
 		for(int i = 0; i < tbAdd.length; i++){
@@ -515,31 +572,58 @@ public class Lottery3D extends WindowAdapter{
 			setConditionValue(kh[i],i + 1);
 		}		
 		y++;	
-		//TODO = ≠ 
-		equalOrNo[0] = new JCheckBox("=");
-		setConditionValue(equalOrNo[0], 1);
-		equalOrNo[1] = new JCheckBox("≠");
-		setConditionValue(equalOrNo[1], 2);
+		setConditionTitle("跨尾过滤：", 0);
+		kwDiff[0] = new JCheckBox("同跨尾");
+		kwDiff[1] = new JCheckBox("不同");
+		for(int i = 0; i < kwDiff.length; i++){
+			setConditionValue(kwDiff[i],i + 1);
+		}
 		
-		//TODO+◆-
-		jjf[0] = new JCheckBox("+");
-		jjf[1] = new JCheckBox("◆");
-		jjf[2] = new JCheckBox("-");
-		setConditionValue(jjf[0], 4);
-		setConditionValue(jjf[1], 5);
-		setConditionValue(jjf[2], 6);
-		y++;		
-		//TODO tbThree
-		tbThree[0] = new JCheckBox("T");
-		setConditionValue(tbThree[0], 1);
-		tbThree[1] = new JCheckBox("B");
-		setConditionValue(tbThree[1], 2);
-		//TODO 同不同
-		differ[0] = new JCheckBox("同");
-		setConditionValue(differ[0], 7);
-		differ[1] = new JCheckBox("不");
-		setConditionValue(differ[1], 8);
-		y++;	
+		//TODO c015
+		c015[0] = new JCheckBox("0");
+		c015[1] = new JCheckBox("15");
+		setConditionValue(c015[0], 4);
+		setConditionValue(c015[1], 5);
+		
+		//TODO XXDD
+		xxdd[0] = new JCheckBox("XX");
+		xxdd[1] = new JCheckBox("DD");
+		setConditionValue(xxdd[0], 8);
+		setConditionValue(xxdd[1], 9);
+		y++;
+		//TODO 顺过滤
+		setConditionTitle("顺过滤：", 0);
+		sgl[0] = new JCheckBox("顺");
+		sgl[1] = new JCheckBox("非顺");
+		setConditionValue(sgl[0], 1);
+		setConditionValue(sgl[1], 2);
+
+		//TODO OZ过滤
+		oz[0] = new JCheckBox("O");
+		oz[1] = new JCheckBox("Z");
+		setConditionValue(oz[0], 4);
+		setConditionValue(oz[1], 5);
+		//TODO 77 11 22 99
+		setn[0] = new JCheckBox("77");
+		setn[1] = new JCheckBox("11");
+		setn[2] = new JCheckBox("22");
+		setn[3] = new JCheckBox("99");
+		for(int i = 0; i < setn.length; i++){
+			setConditionValue(setn[i],i + 1 + sencodPosition);
+		}
+		y++;
+//		//TODO = ≠ 
+//		equalOrNo[0] = new JCheckBox("=");
+//		setConditionValue(equalOrNo[0], 1);
+//		equalOrNo[1] = new JCheckBox("≠");
+//		setConditionValue(equalOrNo[1], 2);
+//		
+//		y++;		
+//		//TODO tbThree
+//		tbThree[0] = new JCheckBox("T");
+//		setConditionValue(tbThree[0], 1);
+//		tbThree[1] = new JCheckBox("B");
+//		setConditionValue(tbThree[1], 2);
 
 		
 //		//TODO1 ds-xd
