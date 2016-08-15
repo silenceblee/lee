@@ -231,6 +231,8 @@ public class Lottery3D extends WindowAdapter{
 	public JCheckBox[] setn = new JCheckBox[4];
 	/**0 3 6 9 2 4 5 7 8 过滤*/
 	public JCheckBox[] zsen = new JCheckBox[9];
+	/**★●过滤*/
+	public JCheckBox[] starCircle = new JCheckBox[2];
 	//************************button控件***************************************
 	/** button 按钮 存放控件 **/
 	public Panel btnPanel = new Panel();
@@ -503,7 +505,9 @@ public class Lottery3D extends WindowAdapter{
 		setConditionValue(differ[0], 7);
 		differ[1] = new JCheckBox("不");
 		setConditionValue(differ[1], 8);
-		
+		//TODO ★●
+		starCircle[0] = new JCheckBox("★");
+		setConditionValue(starCircle[0], 10);
 	/*	//TODO TT BB
 		ttbb[0] = new JCheckBox("TT");
 		setConditionValue(ttbb[0], 1);
@@ -532,6 +536,8 @@ public class Lottery3D extends WindowAdapter{
 		startTB[1] = new JCheckBox("*B");
 		setConditionValue(startTB[1], 8);
 		
+		starCircle[1] = new JCheckBox("●");
+		setConditionValue(starCircle[1], 10);
 		y++;
 		/*//TODO T+B+（新）
 		for(int i = 0; i < tbAdd.length; i++){
