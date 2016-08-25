@@ -233,6 +233,9 @@ public class Lottery3D extends WindowAdapter{
 	public JCheckBox[] zsen = new JCheckBox[9];
 	/**★●过滤*/
 	public JCheckBox[] starCircle = new JCheckBox[2];
+	//add 2016.08.25
+	/**TB_FOUR*/
+	public JCheckBox[] tbFour = new JCheckBox[2];
 	//************************button控件***************************************
 	/** button 按钮 存放控件 **/
 	public Panel btnPanel = new Panel();
@@ -609,6 +612,11 @@ public class Lottery3D extends WindowAdapter{
 		sgl[1] = new JCheckBox("非顺");
 		setConditionValue(sgl[0], 1);
 		setConditionValue(sgl[1], 2);
+		//TODO TB_FOUR
+		tbFour[0] = new JCheckBox("T");
+		setConditionValue(tbFour[0], 4);
+		tbFour[1] = new JCheckBox("B");
+		setConditionValue(tbFour[1], 5);
 		//TODO 77 11 22 99
 		setn[0] = new JCheckBox("77");
 		setn[1] = new JCheckBox("11");
