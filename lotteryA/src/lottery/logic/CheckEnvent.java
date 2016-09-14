@@ -1626,6 +1626,12 @@ public class CheckEnvent {
 				setCheckBoxNoSelected(lottery3d.zsen);
 				setCheckBoxNoSelected(lottery3d.starCircle);
 				setCheckBoxNoSelected(lottery3d.tbFour);
+				
+				setCheckBoxNoSelected(lottery3d.tbZF);
+				setCheckBoxNoSelected(lottery3d.tbXF);
+				setCheckBoxNoSelected(lottery3d.f2Star1);
+				setCheckBoxNoSelected(lottery3d.tbStart);
+				setCheckBoxNoSelected(lottery3d.addXFSubO);
 				setAllVisible();
 				lottery3d.lbNum.setText(lottery3d.lbNumText);
 			}
@@ -1725,6 +1731,12 @@ public class CheckEnvent {
 		Tools.xmlDataCondition(lottery3d.fhx,"fhx", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.starCircle,"starCircle", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.tbFour,"tbFour", list0,list3,list6);
+		
+		Tools.xmlDataCondition(lottery3d.tbZF,"tbZF", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.tbXF,"tbXF", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.f2Star1,"f2Star1", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.tbStart,"tbStart", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.addXFSubO,"addXFSubO", list0,list3,list6);
 		//TODO 所有方法调用 opertionALL
 	}
 }
