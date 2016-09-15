@@ -398,11 +398,11 @@ public class Lottery3D extends WindowAdapter{
 		tbZF[1] = new JCheckBox("B■");
 		setConditionValue(tbZF[1],sencodPosition);
 		//TODO 跨度快捷键
-		setConditionTitle("跨:", sencodPosition+2);
+		//setConditionTitle("跨:", sencodPosition+2);
 		spanChbShortcut[0] = new JCheckBox("中");
-		setConditionValue(spanChbShortcut[0],sencodPosition+3);
+		setConditionValue(spanChbShortcut[0],sencodPosition+2);
 		spanChbShortcut[1] = new JCheckBox("边 ");
-		setConditionValue(spanChbShortcut[1],sencodPosition+4);	
+		setConditionValue(spanChbShortcut[1],sencodPosition+3);	
 		y++;
 		//TODO 和尾012
 		setConditionTitle("和尾012:", 0);
