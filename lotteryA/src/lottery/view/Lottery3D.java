@@ -21,7 +21,7 @@ import lottery.logic.CheckEnvent;
 /**
  * 福彩3D界面<p>
  * @author DuanQingwei  @date 2012-9-19 <br>
- * @version 1.0 <br>
+ * @version 2.0 <br>
  */
 public class Lottery3D extends WindowAdapter{
 
