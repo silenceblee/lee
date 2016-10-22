@@ -237,8 +237,8 @@ public class Lottery3D extends WindowAdapter{
 	/**TB_FOUR*/
 	public JCheckBox[] tbFour = new JCheckBox[2];
 	//add 2016.09.14
-	/**T■ B■*/
-	public JCheckBox[] tbZF = new JCheckBox[2];
+	/**T■  ■  B■*/
+	public JCheckBox[] tbZF = new JCheckBox[3];
 	/**T◆  B◆*/
 	public JCheckBox[] tbXF = new JCheckBox[2];
 	/**2■ ☀	 ■2*/
@@ -395,8 +395,10 @@ public class Lottery3D extends WindowAdapter{
 		//TODO 
 		tbZF[0] = new JCheckBox("T■");
 		setConditionValue(tbZF[0],sencodPosition-1);
-		tbZF[1] = new JCheckBox("B■");
+		tbZF[1] = new JCheckBox("■");
 		setConditionValue(tbZF[1],sencodPosition);
+		tbZF[2] = new JCheckBox("B■");
+		setConditionValue(tbZF[2],sencodPosition+1);
 		//TODO 跨度快捷键
 		//setConditionTitle("跨:", sencodPosition+2);
 		spanChbShortcut[0] = new JCheckBox("中");
