@@ -1790,9 +1790,9 @@ public class Tools {
 	public static void hwCondition(JCheckBox[] condtionBoxs,List<JLabel> ...lists){
 		 Integer[][] data = new Integer[4][];
 		 data[0] = new Integer[]{1,11,21,3,13,23};
-		 data[1] = new Integer[]{5,15,25,7,17,27,9,19};
+		 data[1] = new Integer[]{6,16,26,8,18};
 		 data[2] = new Integer[]{0,10,20,2,12,22,4,14,24};
-		 data[3] = new Integer[]{6,16,26,8,18};
+		 data[3] = new Integer[]{5,15,25,7,17,27,9,19};
 		 List<Integer> dataList = new  ArrayList<Integer>();
 		 for(int i = 0; i < 4; i++){
 			 if(condtionBoxs[i].isSelected()){
@@ -1822,9 +1822,9 @@ public class Tools {
 	public static void kdCondition(JCheckBox[] condtionBoxs,List<JLabel> ...lists){
 		 Integer[][] data = new Integer[4][];
 		 data[0] = new Integer[]{1,3};
-		 data[1] = new Integer[]{5,7,9};
+		 data[1] = new Integer[]{6,8};
 		 data[2] = new Integer[]{0,2,4};
-		 data[3] = new Integer[]{6,8};
+		 data[3] = new Integer[]{5,7,9};
 		 List<Integer> dataList = new  ArrayList<Integer>();
 		 for(int i = 0; i < 4; i++){
 			 if(condtionBoxs[i].isSelected()){

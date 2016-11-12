@@ -1592,7 +1592,7 @@ public class CheckEnvent {
 //				setCheckBoxNoSelected(lottery3d.tboz);
 //				setCheckBoxNoSelected(lottery3d.tb);
 //				setCheckBoxNoSelected(lottery3d.sumTBtb);
-				setCheckBoxNoSelected(lottery3d.c015);
+			//	setCheckBoxNoSelected(lottery3d.c015);
 				//setCheckBoxNoSelected(lottery3d.bilesRe1);
 				//setCheckBoxNoSelected(lottery3d.bilesRe2);
 				//setCheckBoxNoSelected(lottery3d.c27);
@@ -1606,16 +1606,16 @@ public class CheckEnvent {
 //				setCheckBoxNoSelected(lottery3d.uk1);
 //				setCheckBoxNoSelected(lottery3d.hkw);
 //				setCheckBoxNoSelected(lottery3d.hwh);
-				setCheckBoxNoSelected(lottery3d.startTB);
+			//	setCheckBoxNoSelected(lottery3d.startTB);
 				//setCheckBoxNoSelected(lottery3d.tbNew);
 				//setCheckBoxNoSelected(lottery3d.tbSub);
 				//setCheckBoxNoSelected(lottery3d.tbAdd);
 				//setCheckBoxNoSelected(lottery3d.ttbb);
-			//	setCheckBoxNoSelected(lottery3d.c123);
+				setCheckBoxNoSelected(lottery3d.c123);
 			//	setCheckBoxNoSelected(lottery3d.equalOrNo);
 			//	setCheckBoxNoSelected(lottery3d.tbThree);
 				setCheckBoxNoSelected(lottery3d.ttbbSecond);
-				setCheckBoxNoSelected(lottery3d.differ);
+				//setCheckBoxNoSelected(lottery3d.differ);
 				setCheckBoxNoSelected(lottery3d.kw);
 				setCheckBoxNoSelected(lottery3d.jjf);
 				setCheckBoxNoSelected(lottery3d.fhx);
@@ -1624,14 +1624,17 @@ public class CheckEnvent {
 				setCheckBoxNoSelected(lottery3d.xxdd);
 				setCheckBoxNoSelected(lottery3d.setn);
 				setCheckBoxNoSelected(lottery3d.zsen);
-				setCheckBoxNoSelected(lottery3d.starCircle);
-				setCheckBoxNoSelected(lottery3d.tbFour);
+				//setCheckBoxNoSelected(lottery3d.starCircle);
+				setCheckBoxNoSelected(lottery3d.circleStar);
+				//setCheckBoxNoSelected(lottery3d.tbFour);
 				
 				setCheckBoxNoSelected(lottery3d.tbZF);
-				setCheckBoxNoSelected(lottery3d.tbXF);
-				setCheckBoxNoSelected(lottery3d.f2Star1);
-				setCheckBoxNoSelected(lottery3d.tbStart);
-				setCheckBoxNoSelected(lottery3d.addXFSubO);
+				//setCheckBoxNoSelected(lottery3d.tbXF);
+				//setCheckBoxNoSelected(lottery3d.f2Star1);
+				//setCheckBoxNoSelected(lottery3d.tbStart);
+				//setCheckBoxNoSelected(lottery3d.addXFSubO);
+				setCheckBoxNoSelected(lottery3d.addSub);
+				setCheckBoxNoSelected(lottery3d.fjjjj);
 				setAllVisible();
 				lottery3d.lbNum.setText(lottery3d.lbNumText);
 			}
@@ -1694,7 +1697,7 @@ public class CheckEnvent {
 		//跨度
 		Tools.kdCondition(lottery3d.kd, list0,list3,list6);
 		//C0 15
-		Tools.c015Condition(lottery3d.c015, list0,list3,list6);
+		//Tools.c015Condition(lottery3d.c015, list0,list3,list6);
 		//OZ
 		Tools.ozCondition(lottery3d.oz, list0,list3,list6);
 		//不定位胆码反显
@@ -1708,7 +1711,7 @@ public class CheckEnvent {
 		
 //		Tools.xmlDataCondition(lottery3d.tt0bt0,"tt0bt0", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.kh,"kh", list0,list3,list6);
-		Tools.xmlDataCondition(lottery3d.startTB,"startTB", list0,list3,list6);
+	//	Tools.xmlDataCondition(lottery3d.startTB,"startTB", list0,list3,list6);
 	//	Tools.xmlDataCondition(lottery3d.hkw,"hkw", list0,list3,list6);
 	//	Tools.xmlDataCondition(lottery3d.hwh,"hwh", list0,list3,list6);
 	//	Tools.xmlDataCondition(lottery3d.tbAdd,"tb_add", list0,list3,list6);
@@ -1717,10 +1720,10 @@ public class CheckEnvent {
 //		Tools.xmlDataCondition(lottery3d.uk1,"uk1", list0,list3,list6);
 	//	Tools.xmlDataCondition(lottery3d.ttbb,"ttbb", list0,list3,list6);
 	//	Tools.xmlDataCondition(lottery3d.equalOrNo,"equalOrNo", list0,list3,list6);
-		//Tools.xmlDataCondition(lottery3d.c123,"c123", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.c123,"c123", list0,list3,list6);
 	//	Tools.xmlDataCondition(lottery3d.tbThree,"tbThree", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.ttbbSecond,"ttbbSecond", list0,list3,list6);
-		Tools.xmlDataCondition(lottery3d.differ,"differ", list0,list3,list6);
+		//Tools.xmlDataCondition(lottery3d.differ,"differ", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.kw,"kw", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.jjf,"jjf", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.kwDiff,"kwDiff", list0,list3,list6);
@@ -1729,14 +1732,17 @@ public class CheckEnvent {
 		Tools.xmlDataCondition(lottery3d.setn,"setn", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.zsen,"zsen", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.fhx,"fhx", list0,list3,list6);
-		Tools.xmlDataCondition(lottery3d.starCircle,"starCircle", list0,list3,list6);
-		Tools.xmlDataCondition(lottery3d.tbFour,"tbFour", list0,list3,list6);
+		//Tools.xmlDataCondition(lottery3d.starCircle,"starCircle", list0,list3,list6);
+		//Tools.xmlDataCondition(lottery3d.tbFour,"tbFour", list0,list3,list6);
 		
 		Tools.xmlDataCondition(lottery3d.tbZF,"tbZF", list0,list3,list6);
-		Tools.xmlDataCondition(lottery3d.tbXF,"tbXF", list0,list3,list6);
-		Tools.xmlDataCondition(lottery3d.f2Star1,"f2Star1", list0,list3,list6);
-		Tools.xmlDataCondition(lottery3d.tbStart,"tbStart", list0,list3,list6);
-		Tools.xmlDataCondition(lottery3d.addXFSubO,"addXFSubO", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.addSub,"addSub", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.fjjjj,"fjjjj", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.circleStar,"circleStar", list0,list3,list6);
+		//Tools.xmlDataCondition(lottery3d.tbXF,"tbXF", list0,list3,list6);
+		//Tools.xmlDataCondition(lottery3d.f2Star1,"f2Star1", list0,list3,list6);
+		//Tools.xmlDataCondition(lottery3d.tbStart,"tbStart", list0,list3,list6);
+		//Tools.xmlDataCondition(lottery3d.addXFSubO,"addXFSubO", list0,list3,list6);
 		//TODO 所有方法调用 opertionALL
 	}
 }
