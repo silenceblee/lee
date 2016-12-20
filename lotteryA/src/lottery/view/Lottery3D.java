@@ -221,8 +221,8 @@ public class Lottery3D extends WindowAdapter{
 	//add 2016.8.10
 	/**■ Η X*/
 	public JCheckBox[] fhx = new JCheckBox[3];
-	/**跨尾过滤(同跨尾 不同跨尾)*/
-	public JCheckBox[] kwDiff = new JCheckBox[2];
+//	/**跨尾过滤(同跨尾 不同跨尾)*/
+//	public JCheckBox[] kwDiff = new JCheckBox[2];
 	/**顺过滤*/
 	public JCheckBox[] sgl = new JCheckBox[2];
 	/**XXDD过滤*/
@@ -249,11 +249,15 @@ public class Lottery3D extends WindowAdapter{
 	//public JCheckBox[] addXFSubO = new JCheckBox[2];
 	//add 2016.11.12
 	/**加减*/
-	public JCheckBox[] addSub = new JCheckBox[2];
+	public JCheckBox[] addSub = new JCheckBox[3];
 	/**■■十十一一*/
 	public JCheckBox[] fjjjj = new JCheckBox[3];
 	/**●★过滤*/
 	public JCheckBox[] circleStar = new JCheckBox[2];
+	/**口	十◢	口	◣★	口	◣一*/
+	public JCheckBox[] jxj = new JCheckBox[3];
+	/**口	叁	口	贰	口	壹*/
+	public JCheckBox[] d123 = new JCheckBox[3];
 	//************************button控件***************************************
 	/** button 按钮 存放控件 **/
 	public Panel btnPanel = new Panel();
@@ -411,6 +415,8 @@ public class Lottery3D extends WindowAdapter{
 		setConditionValue(addSub[0],sencodPosition + 3);
 		addSub[1] = new JCheckBox("减");
 		setConditionValue(addSub[1],sencodPosition + 4);
+		addSub[2] = new JCheckBox("同");
+		setConditionValue(addSub[2],sencodPosition + 2);
 		y++;
 		//TODO 和尾012
 		setConditionTitle("和尾012:", 0);
@@ -617,6 +623,12 @@ public class Lottery3D extends WindowAdapter{
 //		tbStart[1] = new JCheckBox("B★");
 //		setConditionValue(tbStart[1],10);
 		y++;	
+		jxj[0] = new JCheckBox("十◢");
+		jxj[1] = new JCheckBox("◣★	");
+		jxj[2] = new JCheckBox("◣一");
+		for(int i = 0; i < jxj.length; i++){
+			setConditionValue(jxj[i],i+1);
+		}
 		//TODO ■ Η X
 		fhx[0] = new JCheckBox("■");
 		fhx[1] = new JCheckBox("H");
@@ -635,13 +647,18 @@ public class Lottery3D extends WindowAdapter{
 		circleStar[1] = new JCheckBox("★");
 		setConditionValue(circleStar[1], 9);	
 		y++;
-		setConditionTitle("跨尾过滤：", 0);
-		kwDiff[0] = new JCheckBox("同跨尾");
-		kwDiff[1] = new JCheckBox("不同");
-		for(int i = 0; i < kwDiff.length; i++){
-			setConditionValue(kwDiff[i],i + 1);
+//		setConditionTitle("跨尾过滤：", 0);
+//		kwDiff[0] = new JCheckBox("同跨尾");
+//		kwDiff[1] = new JCheckBox("不同");
+//		for(int i = 0; i < kwDiff.length; i++){
+//			setConditionValue(kwDiff[i],i + 1);
+//		}
+		d123[0] = new JCheckBox("叁");
+		d123[1] = new JCheckBox("贰");
+		d123[2] = new JCheckBox("壹");
+		for(int i = 0; i < d123.length; i++){
+			setConditionValue(d123[i],i + 1);
 		}
-		
 		//TODO+◆-
 		jjf[0] = new JCheckBox("+");
 		jjf[1] = new JCheckBox("◆");
@@ -1314,15 +1331,122 @@ public class Lottery3D extends WindowAdapter{
 		panel.add(rChb6);
 		
 		//***************控制布局的笨办法***********************//
-		for(int i = 0; i < 10; i++){
-			JLabel jLabel = new JLabel("组6");
-			jLabel.setFont(new Font(fontStyle, fontTck, 16));
-			jLabel.setForeground(Color.pink);
+//		for(int i = 0; i < 10; i++){
+//			JLabel jLabel = new JLabel("组6");
+//			jLabel.setFont(new Font(fontStyle, fontTck, 16));
+//			jLabel.setForeground(Color.pink);
+//			bags.gridx = 0;
+//			bags.gridy = i+7;
+//			bagLayout.setConstraints(jLabel, bags);
+//			panel.add(jLabel);
+//		}
+		JLabel[] leftLab = new JLabel[9];
+		leftLab[0] = new JLabel("");
+		leftLab[1] = new JLabel("00");
+		leftLab[2] = new JLabel("");
+		leftLab[3] = new JLabel("");
+		leftLab[4] = new JLabel("0-");
+		leftLab[5] = new JLabel("");
+		leftLab[6] = new JLabel("");
+		leftLab[7] = new JLabel("0+");
+		leftLab[8] = new JLabel("");
+		for(int i = 0; i < leftLab.length;i++){
 			bags.gridx = 0;
-			bags.gridy = i+7;
-			bagLayout.setConstraints(jLabel, bags);
-			panel.add(jLabel);
+			bags.gridy = 8+i;
+			leftLab[i].setFont(new Font(fontStyle, fontTck, 14));
+			bagLayout.setConstraints(leftLab[i], bags);
+			panel.add(leftLab[i]);
 		}
+		JLabel[] leftLab2 = new JLabel[9];
+		leftLab2[0] = new JLabel("边 2");
+		leftLab2[1] = new JLabel("中 1");
+		leftLab2[2] = new JLabel("边 0");
+		leftLab2[3] = new JLabel("边 1");
+		leftLab2[4] = new JLabel("中 0");
+		leftLab2[5] = new JLabel("边 2");
+		leftLab2[6] = new JLabel("边 0");
+		leftLab2[7] = new JLabel("中 2");
+		leftLab2[8] = new JLabel("边 1");
+		for(int i = 0; i < leftLab2.length;i++){
+			bags.gridx = 1;
+			bags.gridy = 8+i;
+			leftLab2[i].setFont(new Font(fontStyle, fontTck, 13));
+			leftLab2[i].setForeground(Color.red);
+			bagLayout.setConstraints(leftLab2[i], bags);
+			panel.add(leftLab2[i]);
+		}
+		JLabel[] leftLab3 = new JLabel[9];
+		leftLab3[0] = new JLabel("");
+		leftLab3[1] = new JLabel("11");
+		leftLab3[2] = new JLabel("");
+		leftLab3[3] = new JLabel("");
+		leftLab3[4] = new JLabel("1-");
+		leftLab3[5] = new JLabel("");
+		leftLab3[6] = new JLabel("");
+		leftLab3[7] = new JLabel("1+");
+		leftLab3[8] = new JLabel("");
+		for(int i = 0; i < leftLab3.length;i++){
+			bags.gridx = 2;
+			bags.gridy = 8+i;
+			leftLab3[i].setFont(new Font(fontStyle, fontTck, 14));
+			bagLayout.setConstraints(leftLab3[i], bags);
+			panel.add(leftLab3[i]);
+		}
+		JLabel[] leftLab4 = new JLabel[9];
+		leftLab4[0] = new JLabel("边 1");
+		leftLab4[1] = new JLabel("中 0");
+		leftLab4[2] = new JLabel("边 2");
+		leftLab4[3] = new JLabel("边 0");
+		leftLab4[4] = new JLabel("中 2");
+		leftLab4[5] = new JLabel("边 1");
+		leftLab4[6] = new JLabel("边 2");
+		leftLab4[7] = new JLabel("中 1");
+		leftLab4[8] = new JLabel("边 0");
+		for(int i = 0; i < leftLab4.length;i++){
+			bags.gridx = 3;
+			bags.gridy = 8+i;
+			leftLab4[i].setFont(new Font(fontStyle, fontTck, 13));
+			leftLab4[i].setForeground(Color.red);
+			bagLayout.setConstraints(leftLab4[i], bags);
+			panel.add(leftLab4[i]);
+		}	
+		
+		JLabel[] rightLab = new JLabel[9];
+		rightLab[0] = new JLabel("");
+		rightLab[1] = new JLabel("22");
+		rightLab[2] = new JLabel("");
+		rightLab[3] = new JLabel("");
+		rightLab[4] = new JLabel("2-");
+		rightLab[5] = new JLabel("");
+		rightLab[6] = new JLabel("");
+		rightLab[7] = new JLabel("2+");
+		rightLab[8] = new JLabel("");
+		for(int i = 0; i < rightLab.length;i++){
+			bags.gridx = 27;
+			bags.gridy = 8+i;
+			rightLab[i].setFont(new Font(fontStyle, fontTck, 14));
+			bagLayout.setConstraints(rightLab[i], bags);
+			panel.add(rightLab[i]);
+		}
+		
+		JLabel[] rightLab2 = new JLabel[9];
+		rightLab2[0] = new JLabel("边 0");
+		rightLab2[1] = new JLabel("中 2");
+		rightLab2[2] = new JLabel("边 1");
+		rightLab2[3] = new JLabel("边 2");
+		rightLab2[4] = new JLabel("中 1");
+		rightLab2[5] = new JLabel("边 0");
+		rightLab2[6] = new JLabel("边 1");
+		rightLab2[7] = new JLabel("中 0");
+		rightLab2[8] = new JLabel("边 2");
+		for(int i = 0; i < rightLab2.length;i++){
+			bags.gridx = 28;
+			bags.gridy = 8+i;
+			rightLab2[i].setFont(new Font(fontStyle, fontTck, 13));
+			rightLab2[i].setForeground(Color.red);
+			bagLayout.setConstraints(rightLab2[i], bags);
+			panel.add(rightLab2[i]);
+		}	
 		frame.add(panel);
 	}
 }

@@ -1619,7 +1619,7 @@ public class CheckEnvent {
 				setCheckBoxNoSelected(lottery3d.kw);
 				setCheckBoxNoSelected(lottery3d.jjf);
 				setCheckBoxNoSelected(lottery3d.fhx);
-				setCheckBoxNoSelected(lottery3d.kwDiff);
+				//setCheckBoxNoSelected(lottery3d.kwDiff);
 				setCheckBoxNoSelected(lottery3d.sgl);
 				setCheckBoxNoSelected(lottery3d.xxdd);
 				setCheckBoxNoSelected(lottery3d.setn);
@@ -1635,6 +1635,8 @@ public class CheckEnvent {
 				//setCheckBoxNoSelected(lottery3d.addXFSubO);
 				setCheckBoxNoSelected(lottery3d.addSub);
 				setCheckBoxNoSelected(lottery3d.fjjjj);
+				setCheckBoxNoSelected(lottery3d.jxj);
+				setCheckBoxNoSelected(lottery3d.d123);
 				setAllVisible();
 				lottery3d.lbNum.setText(lottery3d.lbNumText);
 			}
@@ -1726,7 +1728,7 @@ public class CheckEnvent {
 		//Tools.xmlDataCondition(lottery3d.differ,"differ", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.kw,"kw", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.jjf,"jjf", list0,list3,list6);
-		Tools.xmlDataCondition(lottery3d.kwDiff,"kwDiff", list0,list3,list6);
+		//Tools.xmlDataCondition(lottery3d.kwDiff,"kwDiff", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.sgl,"sgl", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.xxdd,"xxdd", list0,list3,list6);
 		Tools.xmlDataCondition(lottery3d.setn,"setn", list0,list3,list6);
@@ -1743,6 +1745,8 @@ public class CheckEnvent {
 		//Tools.xmlDataCondition(lottery3d.f2Star1,"f2Star1", list0,list3,list6);
 		//Tools.xmlDataCondition(lottery3d.tbStart,"tbStart", list0,list3,list6);
 		//Tools.xmlDataCondition(lottery3d.addXFSubO,"addXFSubO", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.jxj,"jxj", list0,list3,list6);
+		Tools.xmlDataCondition(lottery3d.d123,"d123", list0,list3,list6);
 		//TODO 所有方法调用 opertionALL
 	}
 }
