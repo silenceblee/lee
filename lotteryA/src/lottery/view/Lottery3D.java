@@ -522,12 +522,12 @@ public class Lottery3D extends WindowAdapter{
 		//setConditionValue(tbXF[1], sencodPosition + 2);
 		y++;
 		
-		fjjjj[0] = new JCheckBox("■ ■");
-		setConditionValue(fjjjj[0],1);
-		fjjjj[1] = new JCheckBox("+ +");
-		setConditionValue(fjjjj[1],2);
-		fjjjj[2] = new JCheckBox("- -");
-		setConditionValue(fjjjj[2],3);
+		jxj[0] = new JCheckBox("十◢");
+		jxj[1] = new JCheckBox("◣★	");
+		jxj[2] = new JCheckBox("◣一");
+		for(int i = 0; i < jxj.length; i++){
+			setConditionValue(jxj[i],i+1);
+		}
 		
 		zsen[8] = new JCheckBox("8");
 		zsen[8].setForeground(Color.BLUE);
@@ -590,7 +590,7 @@ public class Lottery3D extends WindowAdapter{
 		setConditionValue(tbAdd[1],2);*/
 		y++;
 		//TODO 跨尾
-		setConditionTitle("跨尾：", 0);
+		setConditionTitle("边  一■十", 0);
 		kw[0] = new JCheckBox("01");
 		kw[1] = new JCheckBox("12");
 		kw[2] = new JCheckBox("20");
@@ -608,7 +608,7 @@ public class Lottery3D extends WindowAdapter{
 //		setConditionValue(tbStart[0],10);
 		y++;
 		//TODO 跨号
-		setConditionTitle("跨号：", 0);
+		setConditionTitle("中  十一■", 0);
 		kh[0] = new JCheckBox("01");
 		kh[1] = new JCheckBox("12");
 		kh[2] = new JCheckBox("20");
@@ -625,12 +625,14 @@ public class Lottery3D extends WindowAdapter{
 //		tbStart[1] = new JCheckBox("B★");
 //		setConditionValue(tbStart[1],10);
 		y++;	
-		jxj[0] = new JCheckBox("十◢");
-		jxj[1] = new JCheckBox("◣★	");
-		jxj[2] = new JCheckBox("◣一");
-		for(int i = 0; i < jxj.length; i++){
-			setConditionValue(jxj[i],i+1);
-		}
+		setConditionTitle("边  ■十一", 0);
+		fjjjj[0] = new JCheckBox("■ ■");
+		setConditionValue(fjjjj[0],1);
+		fjjjj[1] = new JCheckBox("+ +");
+		setConditionValue(fjjjj[1],2);
+		fjjjj[2] = new JCheckBox("- -");
+		setConditionValue(fjjjj[2],3);
+	
 		//TODO ■ Η X
 		fhx[0] = new JCheckBox("■");
 		fhx[1] = new JCheckBox("H");
